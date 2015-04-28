@@ -1,0 +1,51 @@
+<html>
+<head>
+    <style>
+        #bg-vid {
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto; z-index: -100;
+            background: url(rain.jpg) no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop poster="rain.jpg" id="bg-vid">
+        <source src="rain.webm" type="video/webm">
+        <source src="rain.mp4" type="video/mp4">
+    </video>
+    <audio autoplay loop>
+      <source src="rain.ogg" type="audio/ogg">
+      <source src="rain.m4a" type="audio/m4a">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div id="player"></div>
+
+    <script>
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'HMnrl0tmd3k',
+          events: {
+            'onReady': onPlayerReady,
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    </script>
+
+
+</body>
+</html>
