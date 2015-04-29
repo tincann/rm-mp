@@ -9,17 +9,21 @@
 
     * {
       font-family: 'Aaargh-webfont', Arial, sans-serif;
-      padding: 0;
-      margin: 0;
     }
 
     body {
       background: #000;
+      padding: 0;
+      margin: 0;
     }
 
     .peer-message {
-      color:white;
+      color: white;
       position: absolute;
+      padding: 5px;
+      margin: 0 auto;
+      display: block;
+
     }
 
     #backgroundPlayer {
