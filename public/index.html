@@ -1,69 +1,17 @@
 <html>
 <head>
-    <style>
-        @font-face{ 
-            font-family: 'Aaargh-webfont';
-            src: url('Aaargh-webfont.eot');
-            src: url('Aaargh-webfont.eot?iefix') format('eot'),
-                 url('Aaargh-webfont.woff') format('woff'),
-                 url('Aaargh-webfont.ttf') format('truetype'),
-                 url('Aaargh-webfont.svg#webfont') format('svg');
-        }
-
-        * {
-            font-family: 'Aaargh-webfont', Arial, sans-serif;
-        }
-
-        #bg-vid {
-            position: fixed; right: 0; bottom: 0;
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto; z-index: -100;
-            background: url(rain.jpg) no-repeat;
-            background-size: cover;
-        }
-
-        .peer-message {
-            color:white;
-        }
-    </style>
+  <link rel="stylesheet" type="text/css" href="rm.css">
 </head>
 <body>
-    <span class='peer-message'>You're chilling with <strong>4</strong> other classy people.</span>
-    <video autoplay loop poster="rain.jpg" id="bg-vid">
-        <source src="rain.webm" type="video/webm">
-        <source src="rain.mp4" type="video/mp4">
-    </video>
-    <audio autoplay loop>
-      <source src="rain.ogg" type="audio/ogg">
-      <source src="rain.m4a" type="audio/m4a">
-      Your browser does not support the audio element.
-    </audio>
+  <span class='peer-message'>You're chilling with <strong>4</strong> other classy people.</span>
+  <div id="backgroundPlayer"></div>
+  <audio autoplay loop>
+    <source src="sound/rain.ogg" type="audio/ogg">
+      <source src="sound/rain.m4a" type="audio/m4a">
+        Your browser does not support the audio element.
+      </audio>
 
-    <div id="player"></div>
-
-    <script>
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '0',
-          width: '0',
-          videoId: 'HMnrl0tmd3k',
-          events: {
-            'onReady': onPlayerReady,
-          }
-        });
-      }
-
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-    </script>
-
-
+      <div id="musicPlayer"></div>
+      <script type="text/javascript" src="rm.js"></script>
 </body>
-</html>
+</html> 

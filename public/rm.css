@@ -1,0 +1,63 @@
+    @font-face{ 
+      font-family: 'Aaargh-webfont';
+      src: url('font/Aaargh-webfont.eot');
+      src: url('font/Aaargh-webfont.eot?iefix') format('eot'),
+      url('font/Aaargh-webfont.woff') format('woff'),
+      url('font/Aaargh-webfont.ttf') format('truetype'),
+      url('font/Aaargh-webfont.svg#webfont') format('svg');
+    }
+
+    * {
+      font-family: 'Aaargh-webfont', Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background: #000;
+    }
+
+    .peer-message {
+      color:white;
+      position: absolute;
+    }
+
+    #backgroundPlayer {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      -webkit-animation: fade-in 15s; /* Safari 4+ */
+      -moz-animation:    fade-in 15s; /* Fx 5+ */
+      -o-animation:      fade-in 15s; /* Opera 12+ */
+      animation:         fade-in 15s; /* IE 10+, Fx 29+ */
+
+      -webkit-animation-timing-function: ease-out;
+      -moz-animation-timing-function: ease-out;
+      -o-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+
+      -webkit-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      -o-animation-play-state: paused;
+      animation-play-state: paused;
+
+      background-color: #000;
+    }
+
+
+    @-webkit-keyframes fade-in {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @-moz-keyframes fade-in {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @-o-keyframes fade-in {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes fade-in {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
