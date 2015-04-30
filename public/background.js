@@ -15,7 +15,7 @@
                 onReady: onPlayerReady,
                 onStateChange: function(event){
                     if(event.data == YT.PlayerState.PLAYING){
-                        Init();
+                        document.querySelectorAll('#backgroundPlayer')[0].style.webkitAnimationPlayState = "running";
                     }
                 }
             },
@@ -36,9 +36,5 @@
     function onPlayerReady(event){
         event.target.setLoop(true);
         event.target.playVideo();
-    }
-
-    function Init(){
-        document.querySelectorAll('#backgroundPlayer')[0].style.webkitAnimationPlayState = "running";
     }
 })(window);
